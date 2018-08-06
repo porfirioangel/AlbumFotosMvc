@@ -8,5 +8,6 @@ namespace Service
     public interface IAlbumService
     {
         bool Create(Album album);
+        IEnumerable<Album> GetAll();
     }
 }

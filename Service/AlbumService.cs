@@ -2,6 +2,8 @@
 using Model;
 using Model.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Service
 {
@@ -27,6 +29,22 @@ namespace Service
             {
                 return false;
             }
+        }
+
+        public IEnumerable<Album> GetAll()
+        {
+            var result = new List<Album>();
+
+            try
+            {
+                result = context.Album.OrderByDescending(x => x.CreatedAt)
+                    .ToList();
+            }
+            catch (Exception e)
+            {
+            }
+
+            return result;
         }
     }
 }

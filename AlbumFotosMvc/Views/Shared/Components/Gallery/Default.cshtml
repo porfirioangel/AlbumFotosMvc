@@ -1,0 +1,12 @@
+﻿@model List<Album>
+
+<div class="row">
+    @foreach(var a in Model)
+    {
+        <div class="col-md-4">
+            <img src="@a.PhotoLink" class="img-thumbnail"/>
+            <h3>@a.Name</h3>
+            <p>@a.Description</p>
+        </div>
+    }
+</div>
